@@ -4,13 +4,11 @@ public class FactorialOfNum {
 
     // Factorial of a given number Using Recursion
 
-    public static int printFactorialOfNum (int n, int fact) { 
-        if (n <= 0) {
-            return fact;
+    public static int printFactorialOfNum (int n) { 
+        if (n <= 1) {
+            return n;
         }
-
-        fact = fact * n;
-        return printFactorialOfNum(n - 1, fact);
+        return n * printFactorialOfNum(n - 1);
     }
 
     
@@ -19,9 +17,7 @@ public class FactorialOfNum {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        int fact = 1;
-
-        int result = printFactorialOfNum(n, fact);
+        int result = printFactorialOfNum(n);
 
         System.out.println(result);
     }
